@@ -1,0 +1,17 @@
+[package]
+name = "mp4parse-mayhem-kat"
+version = "0.0.0"
+publish = false
+edition = "2018"
+
+# Own workspace root (see mayhem/fuzz's cargo-fuzz-generated Cargo.toml for the same pattern):
+# keeps this additive crate out of the upstream root Cargo.toml's explicit
+# `members = ["mp4parse", "mp4parse_capi"]` list, which we never edit.
+[workspace]
+
+[[bin]]
+name = "kat"
+path = "src/main.rs"
+
+[dependencies]
+mp4parse_capi = { path = "../../mp4parse_capi" }

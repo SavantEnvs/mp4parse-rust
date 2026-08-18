@@ -1,0 +1,11 @@
+project: savantenvs/mp4parse-rust
+target: mp4
+
+cmds:
+  - cmd: /mayhem/mp4
+    libfuzzer: true
+    dictionary: /mayhem/mp4.dict
+
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/mp4/testsuite
